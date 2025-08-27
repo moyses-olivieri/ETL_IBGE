@@ -37,7 +37,8 @@ O retorno que preciso ter em Json: https://servicodados.ibge.gov.br/api/v1/paise
 
 - Requisitando as informações da API.
 
-```
+```python
+
 import requests
 
 url = "https://servicodados.ibge.gov.br/api/v1/paises"
@@ -45,7 +46,8 @@ url = "https://servicodados.ibge.gov.br/api/v1/paises"
 ```
 # Criado uma função que busca os dados necessários da API.
 
-```
+```python
+
 def busca_dados(paises, indicadores):
     """
     Esta função busca os dados da API do IBGE para os países e indicadores especificados.
@@ -69,7 +71,8 @@ def busca_dados(paises, indicadores):
 
 - Importando a biblioteca pandas para tratar os dados e normalizá-los em um dataframe.
 
-```
+```python
+
 import pandas as pd
 
 ```
@@ -79,7 +82,7 @@ import pandas as pd
 - Os dados estão sendo tratados por indicadores que estarão na estrtuturação final: pais, indicador, ano, valor.
 - retorna o dataframe com registros e a quantidade de dados normalizados.
 
-```
+```python
 def normaliza_dados(dados_json):
     """
     Normaliza os dados da API IBGE para DataFrame.
@@ -115,7 +118,7 @@ def normaliza_dados(dados_json):
 
 - Importando as bibliotecas que serão utilizadas:
 
-```
+```python
 import os
 from sqlalchemy import create_engine, text
 import pandas as pd
@@ -123,7 +126,7 @@ import pandas as pd
 ```
 - Configuração de conexão com o banco de dados postgres
 
-```
+```python
 # Configuração de conexão
 
 DB_USER = os.getenv("POSTGRES_USER", "postgres")
@@ -139,7 +142,7 @@ engine = create_engine(DATABASE_URL)
 
 -  Criando as tabelas no postgres: dados, paises e indicadores:
 
-```
+```python
 
 def criar_tabelas():
     """
@@ -178,7 +181,7 @@ def criar_tabelas():
 
 - Salvando o dataframe e inserindo os dados:
 
-```
+```python
 
 def salvar_dataframe(df: pd.DataFrame):
     """
@@ -226,7 +229,7 @@ def salvar_dataframe(df: pd.DataFrame):
 
 - Neste passo, estou instanciando minhas funções para testar o ETL.
 
-```
+```python
 
 from src.extract_api import busca_dados
 from src.normalize import normaliza_dados
@@ -257,7 +260,7 @@ if __name__ == "__main__":
 
 - Criando o docker-compose.yml
 
-```
+```yml
 
 version: "3.9"
 
@@ -290,7 +293,7 @@ services:
 
 - Criando a imagem do Docker:
 
-```
+```dockerfile
 #imagem
 FROM python:3.13-slim
 
