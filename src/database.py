@@ -89,7 +89,7 @@ def salvar_dataframe(df: pd.DataFrame):
         pais_map = dict(conn.execute(text("SELECT nome, id FROM paises")).fetchall())
         indicador_map = dict(conn.execute(text("SELECT nome, id FROM indicadores")).fetchall())
 
-        # substitui os paises e indicadores peos id's
+        # substitui os paises e indicadores pelos id's
         df['pais_id'] = df['pais'].map(pais_map)
         df['indicador_id'] = df['indicador'].map(indicador_map)
 

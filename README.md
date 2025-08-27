@@ -365,3 +365,7 @@ docker-compose up
 - Desenvolvido por Moyses.
 
 - Obs: Fique a vontade para clonar ou forkar.
+
+# Link para a Explicação:
+
+- https://youtu.be/FElaJhGcWps
