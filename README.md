@@ -12,7 +12,7 @@
 
 # 1º Passo: Montar a arquitetura do projeto ETL.
 
- ![](images/IBGE_ETL.png)
+ ![Arquitetura ETL](./images/IBGE_ETL.png)
 
 # 2º Passo: Desenvolvendo a extração dos dados do IBGE e retornando em Json.
 
@@ -326,7 +326,7 @@ docker-compose up
 
 - Usando o Dbeaver, crie uma conexão para o postgres, especificando a porta, usuário, senha e nome do banco. Abaixo segue a ilustração:
 
-![]images/Banco_postgres.PNG
+![Conexão Postgres](./images/Banco_postgres.PNG)
 
 
 # Fontes e Referências:
